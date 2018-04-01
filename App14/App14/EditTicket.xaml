@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:local="clr-namespace:App14"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App14.EditTicket"
+             Title="Edit Ticket">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+
+            <ActivityIndicator x:Name="activityIndicator" AbsoluteLayout.LayoutBounds=".5,0,50,50" AbsoluteLayout.LayoutFlags="PositionProportional" Color="Gray" IsRunning="True"/>
+            <StackLayout x:Name="workingStack" Margin="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="3">
+                    <Grid RowSpacing="2"  ColumnSpacing="10" Margin="0" Padding="0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"  />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*"  />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Row="0" Grid.Column="0" Padding="10">
+                            <Label Text="Ticket #" TextColor="#3b93f7" HorizontalTextAlignment="End" VerticalTextAlignment="End"  Font="Bold" FontSize="Small"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="#eeeeee" Padding="10">
+                            <Label x:Name="lblTicketNumber" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="0" Padding="10">
+                            <Label Text="Device: " TextColor="#3b93f7" HorizontalTextAlignment="End" VerticalTextAlignment="End"  Font="Bold" FontSize="Small"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="#eeeeee" Padding="10" >
+                            <Label x:Name="lblTicketDevice"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="2" Grid.Column="0" Padding="10">
+                            <Label Text="Full Name: " TextColor="#3b93f7" HorizontalTextAlignment="End" VerticalTextAlignment="End"  Font="Bold" FontSize="Small"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="#eeeeee">
+                            <Entry x:Name="lblTicketFullName" FontSize="Small" HorizontalTextAlignment="Start" />
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="3" Grid.Column="0" Padding="10">
+                            <Label Text="Email Address: " TextColor="#3b93f7" HorizontalTextAlignment="End" VerticalTextAlignment="End"  Font="Bold" FontSize="Small"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="3" Grid.Column="1" BackgroundColor="#eeeeee">
+                            <Entry x:Name="lblTicketEmail" FontSize="Small" HorizontalTextAlignment="Start" />
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="4" Grid.Column="0" Padding="10">
+                            <Label Text="Summary: " TextColor="#3b93f7" HorizontalTextAlignment="End" VerticalTextAlignment="End"  Font="Bold" FontSize="Small"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="4" Grid.Column="1" BackgroundColor="#eeeeee">
+                            <Entry x:Name="lblTicketSummary" FontSize="Small" HorizontalTextAlignment="Start" />
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="5" Grid.Column="0" Padding="10">
+                            <Label Text="Detail: " TextColor="#3b93f7" HorizontalTextAlignment="End" VerticalTextAlignment="End" Font="Bold" FontSize="Small" />
+                        </StackLayout>
+                        <StackLayout Grid.Row="5" Grid.Column="1" BackgroundColor="#eeeeee" >
+                            <Entry x:Name="lblTicketDetail" FontSize="Small" HorizontalTextAlignment="Start"/>
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="6" Grid.Column="0" Padding="10">
+                            <Label Text="Source: " TextColor="#3b93f7" HorizontalTextAlignment="End" VerticalTextAlignment="End"  Font="Bold" FontSize="Small"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="6" Grid.Column="1" BackgroundColor="#eeeeee">
+                            <Label x:Name="lblTicketSource" FontSize="Small" HorizontalTextAlignment="Start" VerticalTextAlignment="End"/>
+                        </StackLayout>
+
+                        <!--<StackLayout Grid.Row="7" Grid.Column="0" Padding="10">
+                            <Label Text="Topic: " TextColor="#3b93f7" HorizontalTextAlignment="End" VerticalTextAlignment="Center"  Font="Bold" FontSize="Small"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="7" Grid.Column="1" BackgroundColor="#eeeeee">
+                            <Label x:Name="lblTicketTopic" FontSize="Small" HorizontalTextAlignment="Start" />
+                        </StackLayout>-->
+
+                        <StackLayout Grid.Row="7" Grid.Column="0" Padding="10">
+                            <Label Text="Due Date: " TextColor="#3b93f7" HorizontalTextAlignment="End" VerticalTextAlignment="End"  Font="Bold" FontSize="Small"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="7" Grid.Column="1" BackgroundColor="#eeeeee" Padding="10">
+                            <Label x:Name="lblTicketDueDate"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"  />
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="8" Grid.Column="0" Padding="10">
+                            <Label Text="Created: " TextColor="#3b93f7" HorizontalTextAlignment="End" VerticalTextAlignment="End"   Font="Bold" FontSize="Small"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="8" Grid.Column="1" BackgroundColor="#eeeeee" Padding="10">
+                            <Label x:Name="lblTicketCreated"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"  />
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="9" Grid.Column="0" Padding="10">
+                            <Label Text="Status: " TextColor="#3b93f7" HorizontalTextAlignment="End" VerticalTextAlignment="End"   Font="Bold" FontSize="Small"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="9" Grid.Column="1" BackgroundColor="#dfdede" Padding="10">
+                            <Label x:Name="lblTicketStatus"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"  />
+                            <!--<Picker x:Name="PickerTicketStatus" SelectedIndexChanged="PickerTicketStatus_SelectedIndexChanged" Title="{Binding status}"/>-->
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <!-- middle controls -->
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                    <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button x:Name="btnSave" Clicked="btnSave_Clicked" Text="Save" BackgroundColor="#5DB40F" Margin="2" BorderWidth="1" TextColor="White" HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

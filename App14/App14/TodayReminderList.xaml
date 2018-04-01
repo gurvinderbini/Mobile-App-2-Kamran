@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App14"
+             x:Class="App14.TodayReminderList"
+             Title="TODAY SCHEDULE">
+    <ContentPage.Content>        
+        <AbsoluteLayout>
+            
+            <StackLayout x:Name="absMain" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Spacing="2">
+                
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start" BackgroundColor="White">
+                    <StackLayout VerticalOptions="Center">
+                        <Grid Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0" Grid.Row="0" HorizontalOptions="Start">
+                                <Label x:Name="lblSchedule"  Text="Schedule" FontSize="Large" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="#7ABB6E" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="0" HorizontalOptions="End">
+                                <!--<Label x:Name="lblMore" Text="More" FontSize="Large" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="#7ABB6E" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>-->
+                            </Grid>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <StackLayout BackgroundColor="White">
+                    <Entry Margin="5" x:Name="EntryNew" Placeholder="Enter New Schedule"/>
+                </StackLayout>
+
+                <StackLayout VerticalOptions="EndAndExpand" BackgroundColor="White">
+                    <!-- ItemSelected="lvEventsList_ItemSelected"-->
+                    <ListView x:Name="lvEventsList" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <!--<TextCell x:Name="textCell" Text="{Binding title}" Detail="{Binding overallTime}" />-->
+                                <ViewCell >
+                                    <Grid x:Name="ticketDetails">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="8*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackLayout Grid.Row="0" Grid.Column="0" Padding="5" BackgroundColor="White">
+                                            <StackLayout BackgroundColor="Black" VerticalOptions="FillAndExpand" Padding="2" >
+                                                <Label Text ="{Binding strtMonth}" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"/>
+                                                <Label Text ="{Binding strtDate}" BackgroundColor="White" TextColor="Black" FontAttributes="Bold" FontSize="Large" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                        <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Center" Margin="0">
+                                            <StackLayout>
+                                                <Label Text ="{Binding title}" FontSize="Large" FontAttributes="Bold"/>
+                                                <Label Text ="{Binding overallTime}"/>
+                                                <!--<Label Text ="{Binding endTime}"/>-->
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                    
+            </StackLayout>
+
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

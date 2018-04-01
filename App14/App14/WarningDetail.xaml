@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<t:MenuContainerPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+     xmlns:t="clr-namespace:SlideOverKit"
+             x:Class="App14.WarningDetail"
+             xmlns:local="clr-namespace:App14"
+             Title="Warning Details">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="icon" Icon="Image.png" Order="Primary" Priority="0"/>
+        <ToolbarItem x:Name="iconmenu1" Icon="menu1.png" Clicked="Handle_Clicked" Order="Primary" Priority="1"/>
+        <!--<ToolbarItem x:Name="war_markas_fix" Text="Mark As Fixed" Clicked="war_markas_fix_Clicked" Order="Secondary" />-->
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ActivityIndicator x:Name="activityIndicator" AbsoluteLayout.LayoutBounds=".5,0,50,50" AbsoluteLayout.LayoutFlags="PositionProportional" Color="Gray" IsRunning="True"/>
+            <StackLayout x:Name="workingStack" Margin="10">
+                <ListView x:Name="lvWarningDetail" HasUnevenRows="True" SeparatorVisibility="None" >
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid RowSpacing="1" Margin="3">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2.5*" />
+                                        <ColumnDefinition Width="5*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout Grid.Row="0" Grid.Column="0" Padding="10">
+                                        <Label Text="{Binding title}" 
+                                            TextColor="#3b93f7" 
+                                            HorizontalTextAlignment="End"
+                                            VerticalOptions="CenterAndExpand"
+                                            FontAttributes="Bold" 
+                                            FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="0" Grid.Column="1" Padding="10" BackgroundColor="#eeeeee">
+                                        <Label Text="{Binding value}" />
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <StackLayout VerticalOptions="End" >
+                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button x:Name="war_tckt_create" Clicked="war_tckt_create_Clicked" Text="Ticket" Font="Bold" FontSize="Small" WidthRequest="90" HeightRequest="50" BackgroundColor="#5AB511" TextColor="White" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button x:Name="war_inst_sw" Clicked="war_inst_sw_Clicked" Text="Install S/W"  Font="Bold" FontSize="Small" WidthRequest="90" HeightRequest="50" BackgroundColor="#2678AD"  TextColor="White" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button x:Name="war_pwr_mgt" Clicked="war_pwr_mgt_Clicked" Text="Power Mgt" Font="Bold" FontSize="Small" WidthRequest="90" HeightRequest="50" BackgroundColor="#D64C3F"  TextColor="White" HorizontalOptions="FillAndExpand"
+                                />
+                        </StackLayout>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand" VerticalOptions="End" Margin="0,0,0,5"> 
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button x:Name="btnCsFix" Clicked="btnCsFix_Clicked" Text="CS Fix It" Font="Bold" FontSize="Small" WidthRequest="100" HeightRequest="50" BackgroundColor="#8CD0E9" TextColor="White" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button x:Name="btnRemote" Clicked="btnRemote_Clicked" Text="REMOTE ACCESS" Font="Bold" FontSize="Small" WidthRequest="100" HeightRequest="50" BackgroundColor="#F57311"  TextColor="White" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</t:MenuContainerPage>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App14"
+             x:Class="App14.Events"
+             Title="Events List">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout x:Name="workingStack">
+                <ListView x:Name="lvEventsList" HasUnevenRows="True" ItemSelected="lvEventsList_ItemSelected"
+                    SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <!--<TextCell x:Name="textCell" Text="{Binding title}" Detail="{Binding overallTime}" />-->
+                            <ViewCell >
+                                <Grid x:Name="ticketDetails">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="8*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Row="0" Grid.Column="0" Padding="5" BackgroundColor="White">
+                                        
+                                        <StackLayout BackgroundColor="Black" VerticalOptions="FillAndExpand" Padding="2" >
+                                            <Label Text ="{Binding strtMonth}" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"/>
+                                            <Label Text ="{Binding strtDate}" BackgroundColor="White" TextColor="Black" FontAttributes="Bold" FontSize="Large" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                    <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Center" Margin="0">
+                                        <StackLayout>
+                                            <Label Text ="{Binding title}" FontSize="Large" FontAttributes="Bold"/>
+                                            <Label Text ="{Binding overallTime}"/>
+                                            <Label Text ="{Binding endTime}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

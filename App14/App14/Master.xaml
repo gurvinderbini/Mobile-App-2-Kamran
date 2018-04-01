@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App14.Master"  
+             Title="Menu"
+             xmlns:local="clr-namespace:App14"
+             Icon="hamburger">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Vertical" HeightRequest="200" BackgroundColor="#3988d6" HorizontalOptions="FillAndExpand" Padding="20">
+                <Image Source="logo"  />
+            </StackLayout>
+            <StackLayout Orientation="Vertical"  BackgroundColor="#eff2f5" VerticalOptions="FillAndExpand" Padding="20" HorizontalOptions="FillAndExpand" >
+            <Grid RowSpacing="20"  ColumnSpacing="10" Margin="0" Padding="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"  />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35"  />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+
+                <Image 
+                        Source="homeGray" 
+                        VerticalOptions="FillAndExpand" 
+                        HorizontalOptions="FillAndExpand"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        />
+                <Label 
+                        x:Name="btnDashboard" 
+                        TextColor="#475059" 
+                        BackgroundColor="Transparent" 
+                        Text="Dashboard" 
+                        HorizontalOptions="FillAndExpand"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        
+                    />
+
+                <Image 
+                        Source="warningGray" 
+                        VerticalOptions="FillAndExpand" 
+                        HorizontalOptions="FillAndExpand"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        />
+                <Label 
+                        x:Name="btnWarnings" 
+                        TextColor="#475059" 
+                        BackgroundColor="Transparent" 
+                        Text="Warnings"  
+                        Margin="0" 
+                        Grid.Row="1"
+                        Grid.Column="1"
+                    />
+
+                <Image 
+                        Source="devicesGray" 
+                        VerticalOptions="FillAndExpand" 
+                        HorizontalOptions="FillAndExpand"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        />
+                <Label 
+                        x:Name="btnRooms" 
+                        TextColor="#475059" 
+                        BackgroundColor="Transparent" 
+                        Text="Groups"  
+                        Margin="0" 
+                        Grid.Row="2"
+                        Grid.Column="1"
+                    />
+
+                <Image 
+                    Source="schedule" 
+                    VerticalOptions="FillAndExpand" 
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    />
+                <Label 
+                    x:Name="btnSchedule" 
+                    TextColor="#475059" 
+                    BackgroundColor="Transparent" 
+                    Text="Calender"
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                        
+                />
+
+                <Image 
+                    Source="ticketsGray" 
+                    VerticalOptions="FillAndExpand" 
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    />
+                <Label 
+                        x:Name="btnTickets" 
+                        TextColor="#475059" 
+                        BackgroundColor="Transparent" 
+                        Text="Tickets" 
+                        Margin="0" 
+                        Grid.Row="4"
+                        Grid.Column="1"
+                    />
+
+                <Image 
+                Source="help" 
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand"
+                Grid.Row="5"
+                Grid.Column="0"
+                />
+                <Label 
+                    x:Name="btnHelp" 
+                    TextColor="#475059" 
+                    BackgroundColor="Transparent" 
+                    Text="Help" 
+                    Margin="0" 
+                    Grid.Row="5"
+                    Grid.Column="1"
+                />
+
+                <Image 
+                    Source="signoutGray" 
+                    VerticalOptions="FillAndExpand" 
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    />
+                <Label 
+                    x:Name="btnSignout" 
+                    TextColor="#475059" 
+                    BackgroundColor="Transparent" 
+                    Text="Sign Out"  
+                    Margin="0" 
+                    Grid.Row="6"
+                    Grid.Column="1"
+                  />
+
+            </Grid>
+        </StackLayout>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App14.ButtonContext">
+  <ContentView.Content>
+        <AbsoluteLayout>
+            <Button x:Name="btnSignOut" Text="SignOut" TextColor="White" BorderColor="Transparent" BackgroundColor="Transparent" Opacity="1" HorizontalOptions="FillAndExpand" Clicked="btnSignOut_Clicked"/>
+            <Button x:Name="btnHelp" Text="Help" TextColor="White" BorderColor="Transparent" BackgroundColor="Transparent" Opacity="1"  HorizontalOptions="FillAndExpand" Clicked="btnHelp_Clicked"/>
+            <Button x:Name="btnCalendar" Text="Calendar" TextColor="White" BorderColor="Transparent" BackgroundColor="Transparent" Opacity="1"  HorizontalOptions="FillAndExpand" Clicked="btnCalendar_Clicked"/>
+            <Button x:Name="btnTickets" Text="Tickets" TextColor="White" BorderColor="Transparent" BackgroundColor="Transparent" Opacity="1"  HorizontalOptions="FillAndExpand" Clicked="btnTickets_Clicked"/>
+            <Button x:Name="btnDevice" Text="Devices" TextColor="White" BorderColor="Transparent" BackgroundColor="Transparent" Opacity="1"  HorizontalOptions="FillAndExpand" Clicked="btnDevice_Clicked"/>
+            <Button x:Name="btnWarning" Text="Warnings" TextColor="White" BorderColor="Transparent" BackgroundColor="Transparent" Opacity="1"  HorizontalOptions="FillAndExpand" Clicked="btnWarning_Clicked"/>
+            <Button x:Name="btnHome" Text="Home" TextColor="White" BorderColor="Transparent" BackgroundColor="Transparent" Opacity="1"  HorizontalOptions="FillAndExpand" Clicked="btnHome_Clicked"/>           
+        </AbsoluteLayout>
+    </ContentView.Content>
+</ContentView>

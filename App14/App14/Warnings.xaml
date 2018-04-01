@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App14"
+             x:Class="App14.Warnings"
+             Title="Warning">
+    <ContentPage.Content >
+        <AbsoluteLayout>
+            <ActivityIndicator x:Name="aiDevices" AbsoluteLayout.LayoutBounds=".5,0,50,50" AbsoluteLayout.LayoutFlags="PositionProportional" Color="Gray" IsRunning="True"/>
+            <StackLayout x:Name="workingStack">
+                <ListView x:Name="lvWarningsList" HasUnevenRows="True"
+                   SeparatorVisibility="None"
+                    ItemSelected="lvWarningsList_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="100">
+                                <Grid x:Name="ticketDetails">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="80*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackLayout BackgroundColor="{Binding color}" Grid.Row="0" Grid.Column="0" Margin="0,10,5,5" >
+                                        <Label x:Name="lblICON" Text="{Binding icon}" TextColor="White" 
+                                        FontAttributes="Bold" FontSize="50" 
+                                         VerticalOptions="Center" 
+                                        HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                        <!--<Image Source="{Binding icon}" VerticalOptions="Center" HorizontalOptions="Center"  HeightRequest="60" />-->
+                                    </StackLayout>
+                                    <StackLayout  Orientation="Vertical" Grid.Row="0" Grid.Column="1" Padding="10">
+                                        <Label x:Name="id==lblID" Text="{Binding name}" FontAttributes="Bold" />
+                                        <Label x:Name="lblName" Text="{Binding warnings_count}"  />
+                                        <!--<Label x:Name="lblHard" Text="Hard disk" FontAttributes="Italic"  />-->
+                                    </StackLayout>
+                                    <!--<StackLayout Grid.Row="0" Grid.Column="2" Padding="10" VerticalOptions="End">
+                                        <Label Text="{Binding date}" HorizontalTextAlignment="End" />
+                                    </StackLayout>-->
+
+                                    <StackLayout Grid.Row="0" Grid.Column="2" Padding="10">
+                                        <StackLayout>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="3*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <StackLayout Grid.Row="0" Grid.Column="0">
+                                                    <!--<Label x:Name="lblStatus" Text="Online" />-->
+                                                    <Label x:Name="lblStatus" Text="{Binding online_status}" VerticalOptions="Center" HorizontalOptions="Center" />
+                                                </StackLayout>
+                                                <StackLayout Grid.Row="0" Grid.Column="1">
+                                                    <!--<Image x:Name="imgStatus" Source="online2" VerticalOptions="Center" HorizontalOptions="Center"   />-->
+                                                    <Image x:Name="imgStatus" Source="{Binding online}" VerticalOptions="Center" HorizontalOptions="Center"   />
+                                                </StackLayout>
+                                            </Grid>
+                                        </StackLayout>
+                                        <StackLayout x:Name="btnRemote">
+                                            <!--<Button Clicked="btnAccess_Clicked" Text="Access" HeightRequest="40" TextColor="White" FontSize="Small" WidthRequest="70" BackgroundColor="#3988d6" />-->
+                                            <Button CommandParameter="{Binding id}" Clicked="btnAccess_Clicked" Text="Access" HeightRequest="40" TextColor="White" FontSize="Small" WidthRequest="70" BackgroundColor="#3988d6" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+
+</ContentPage>

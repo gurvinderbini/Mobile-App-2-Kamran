@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App14"
+             x:Class="App14.PCHealth"
+             Title="Device Health">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ActivityIndicator x:Name="activityIndicator" AbsoluteLayout.LayoutBounds=".5,0,50,50" AbsoluteLayout.LayoutFlags="PositionProportional" Color="Gray" IsRunning="True"/>
+            <StackLayout x:Name="workingStack" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                
+                <ListView x:Name="lvPcHealth" HasUnevenRows="True"  
+                    SeparatorVisibility="None">
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid RowSpacing="1" Margin="3">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="3*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Row="0" Grid.Column="0" Padding="10">
+                                        <Label x:Name="lblTitle" 
+                                            Text="{Binding title}" 
+                                            TextColor="#3b93f7"  
+                                            HorizontalTextAlignment="End" 
+                                            FontAttributes="Bold" 
+                                            FontSize="Small"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="0" Grid.Column="1" Padding="10" BackgroundColor="#eeeeee">
+                                        <Label Text="{Binding value}" />
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <StackLayout VerticalOptions="End" Margin="5,0,5,0">
+                    <StackLayout Orientation="Horizontal" 
+                        VerticalOptions="EndAndExpand">
+
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button x:Name="tckt_create" Clicked="tckt_create_Clicked" Text="Ticket" Font="Bold" FontSize="Small" WidthRequest="100" HeightRequest="50" BackgroundColor="#5AB511" TextColor="White" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button x:Name="inst_sw" Clicked="inst_sw_Clicked" Text="Install S/W"  Font="Bold" FontSize="Small" WidthRequest="100" HeightRequest="50" BackgroundColor="#2678AD"  TextColor="White" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button x:Name="pwr_mgt" Clicked="pwr_mgt_Clicked" Text="Power Mgt" Font="Bold" FontSize="Small" WidthRequest="100" HeightRequest="50" BackgroundColor="#D64C3F"  TextColor="White" HorizontalOptions="FillAndExpand"
+                                />
+                        </StackLayout>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal"  
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="End"
+                        Margin="0,0,0,15">
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button x:Name="btnCsFix" Clicked="btnCsFix_Clicked" Text="CS Fix It" Font="Bold" FontSize="Small" WidthRequest="100" HeightRequest="50" BackgroundColor="#8CD0E9" TextColor="White" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                            <Button x:Name="btnRemote" Clicked="btnRemote_Clicked" Text="REMOTE ACCESS" Font="Bold" FontSize="Small" WidthRequest="100" HeightRequest="50" BackgroundColor="#F57311"  TextColor="White" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+                <!--<StackLayout VerticalOptions="End"  HorizontalOptions="FillAndExpand">
+                    <Button x:Name="btnRemote" Clicked="btnRemote_Clicked" Text="REMOTE ACCESS" Font="Bold" FontSize="Medium" WidthRequest="100" HeightRequest="50" BackgroundColor="#8A8A8C"  Margin="2" BorderWidth="1" TextColor="White" HorizontalOptions="FillAndExpand"
+                            VerticalOptions="EndAndExpand"/>
+                </StackLayout>-->
+            </StackLayout>
+
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

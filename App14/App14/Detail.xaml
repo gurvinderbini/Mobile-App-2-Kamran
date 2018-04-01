@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App14"
+             x:Class="App14.Detail"
+             Title="DASHBOARD"
+             BackgroundColor="#42C0FB">
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Grid x:Name="absMain" Margin="10" BackgroundColor="#42C0FB">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="firstStack" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid x:Name="itemConnectedDevices" Grid.Row="0" Grid.Column="0" BackgroundColor="White">
+                        <StackLayout VerticalOptions="Center">
+                            <Label x:Name="lblNoOfConDevices" Text="0" TextColor="Black" HorizontalOptions="Center" HorizontalTextAlignment="Center" Font="100" FontAttributes="Bold"/>
+                            <Label x:Name="lblConnectedDevices" Text="CONNECTED DEVICES" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" Font="20" FontAttributes="Bold" LineBreakMode="WordWrap"/>
+                            </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="0" Grid.Column="1" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid x:Name="itemOnlineDevices" Grid.Row="0" BackgroundColor="White">
+                                <Label x:Name="lblOnlineDevices" Text="0" TextColor="Black" Font="40" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                                <Image x:Name="online" Margin="5,5,5,10" HorizontalOptions="StartAndExpand" Source="online2" VerticalOptions="End"/>
+                                <Label Text="ONLINE DEVICES" FontAttributes="Bold" FontSize="Small" 
+                            Margin="17,10,0,10" HorizontalOptions="Center"  VerticalOptions="End"/>
+                                 <!--<Button x:Name="btnOnline" Image="online2" BorderColor="Transparent" Text="ONLINE DEVICES" BackgroundColor="Transparent" VerticalOptions="End" FontAttributes="Bold" FontSize="Small"/>-->
+                        </Grid>
+                        <Grid x:Name="itemWarnings" Grid.Row="1" BackgroundColor="White">
+                            <Label x:Name="lblWarnings" Text="0" TextColor="Black" Font="40" FontAttributes="Bold"  HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" />
+                            <Image x:Name="btnWarning" Margin="2,5,5,10" HorizontalOptions="StartAndExpand" Source="warning2" VerticalOptions="End"/>
+                            <Label Text="TOTAL WARNINGS" FontAttributes="Bold" FontSize="Small" 
+                            Margin="15,10,0,10" HorizontalOptions="Center"  VerticalOptions="End"/>
+                            <!--<Button x:Name="btnWarning" Image="warning2" BorderColor="Transparent" Text="TOTAL WARNINGS" BackgroundColor="Transparent" VerticalOptions="End" FontAttributes="Bold" FontSize="Small"/>-->
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="SecondStack" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="SecFrstStak" Grid.Row="0" BackgroundColor="White">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <Label Text="NUMBER OF TICKETS" Font="25" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap" />
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <Label x:Name="lblTickets" Text="0" Font="85" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                        </Grid>
+                    </Grid>
+                    <Grid x:Name="SecSecStak" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid x:Name="TODOLIST" Grid.Column="0" BackgroundColor="White">
+                            <Label x:Name="lBLReminders" Text="0" Font="40" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                            <Label Text="REMINDERS" FontSize="Micro" FontAttributes="Bold" TextColor="Black" Margin="10" VerticalOptions="End" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                        </Grid>
+                        <Grid Grid.Column="1" BackgroundColor="White" >
+                            <Label x:Name="lblCSFixIt" Text="0" Font="40" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                            <Label Text="CS FIX IT THIS MONTH" FontSize="Micro" FontAttributes="Bold" TextColor="Black" Margin="10" VerticalOptions="End" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                        </Grid>
+                    </Grid>                    
+                </Grid>           
+            </Grid>
+            <ActivityIndicator x:Name="aiDevices" AbsoluteLayout.LayoutBounds=".5,0,50,50" AbsoluteLayout.LayoutFlags="PositionProportional" Color="Gray" IsRunning="True"/>
+
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+                --><!--<local:ButtonContext x:Name="BtnMenu"/>--><!--
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
+

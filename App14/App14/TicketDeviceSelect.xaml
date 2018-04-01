@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App14.TicketDeviceSelect"
+             Title="DEVICES">
+    <ContentPage.Content>
+        <StackLayout x:Name="workingStack">
+            <StackLayout>
+                <Label x:Name="lblGroupName" Text="GROUP ONE DEVICES" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="Gray" />
+            </StackLayout>
+            <!--<StackLayout>
+                <SearchBar x:Name="searchBar" Placeholder="Search by Device Name" TextChanged="searchBar_TextChanged" HorizontalOptions="StartAndExpand" PlaceholderColor="LightGray"/>
+            </StackLayout>-->
+            <ListView x:Name="lvDevicesList" HasUnevenRows="True" ItemSelected="lvDevicesList_ItemSelected" >
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell >
+                            <ViewCell.ContextActions>
+                                <MenuItem x:Name="moveDevice" CommandParameter="{Binding deviceID}"
+                                        Text="Move Device" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            <!--<Grid Padding="5">-->
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackLayout Grid.Row="0" Grid.Column="0" Padding="10">
+                                    <Image Source="{Binding icon}" VerticalOptions="Center" HorizontalOptions="Center"  HeightRequest="60" />
+                                </StackLayout>
+                                <StackLayout Grid.Row="0" Grid.Column="1" Padding="10">
+                                    <Label Text="{Binding name}" Font="Bold"/>
+                                    <Label Text="{Binding operating_system}"/>
+                                    <!--<Label Text="{Binding make}"/>-->
+                                </StackLayout>
+                                <StackLayout Grid.Row="0" Grid.Column="2" Padding="10">
+                                    <StackLayout>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackLayout Grid.Row="0" Grid.Column="0">
+                                                <Label x:Name="lblStatus" Text="{Binding online_status}" />
+                                            </StackLayout>
+                                            <StackLayout Grid.Row="0" Grid.Column="1">
+                                                <Image x:Name="imgStatus" Source="{Binding online}" VerticalOptions="Center" HorizontalOptions="Center"   />
+                                            </StackLayout>
+                                        </Grid>
+                                    </StackLayout>
+                                    <StackLayout x:Name="btnRemote">
+                                        <!--//Text="{Binding deviceID}"-->
+                                        <Button CommandParameter="{Binding deviceID}" Text="Access" HeightRequest="40" TextColor="White" FontSize="Small" WidthRequest="70" BackgroundColor="#3988d6" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

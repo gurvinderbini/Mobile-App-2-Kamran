@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App14"
+             x:Class="App14.DeviceInfo"
+             Title="#F14-1324"
+             >
+    <ContentPage.Content>
+        <AbsoluteLayout>
+
+            <Grid x:Name="workingStack" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Frame Grid.Row="0" Grid.Column="0" Padding="10" BackgroundColor="#2196F3" CornerRadius="7">
+                        <Label Text="DETAILS" TextColor="White" HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="1" Padding="10" BackgroundColor="#2196F3" CornerRadius="7">
+                        <Label Text="RESPONSE" TextColor="White" HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large" />
+                    </Frame>
+                </Grid>
+                
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Row="0" Grid.Column="0" Padding="10" BackgroundColor="#2196F3" CornerRadius="7">
+                        <Label Text="INTERNAL NOTES" TextColor="White" HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="1" Padding="10" BackgroundColor="#2196F3" CornerRadius="7">
+                        <Label Text="TIMELINE" TextColor="White" HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+                    </Frame>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Row="0" Grid.Column="0" Padding="10" BackgroundColor="#2196F3" CornerRadius="7">
+                        <Label Text="EXPENSES" TextColor="White" HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="1" Padding="10" BackgroundColor="#2196F3" CornerRadius="7">
+                        <Label Text="TIMESHEET" TextColor="White" HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+                    </Frame>
+                </Grid>                
+            </Grid>
+
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

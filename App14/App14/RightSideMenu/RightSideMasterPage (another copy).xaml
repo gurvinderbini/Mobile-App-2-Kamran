@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<t:SlideMenuView xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:t="clr-namespace:SlideOverKit" 
+    x:Class="App14.iOS.RightSideMenu.RightSideMasterPage1">
+    <StackLayout Orientation="Vertical"
+        Margin="0,30,0,0">
+        <Label Text="MENU"
+            TextColor="Black"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Start"
+            Margin="20"/>
+        <Button Text="Add New Ticket" 
+            TextColor="White" 
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Start"
+            WidthRequest="140"
+            HeightRequest="50"
+            FontSize="18"
+            BackgroundColor="#0099DD" 
+            Clicked="Handle_Clicked"/>
+        </StackLayout>
+</t:SlideMenuView>

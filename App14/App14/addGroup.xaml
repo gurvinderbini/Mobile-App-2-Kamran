@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App14"
+             x:Class="App14.addGroup"
+             Title="Add Group">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+
+            <StackLayout x:Name="workingStack" HorizontalOptions="Fill" VerticalOptions="Center" Margin="50">
+                <Entry x:Name="lblgroupName" Placeholder="Group Name" />
+                <Button x:Name="btnAddGroup" Text="Add" HorizontalOptions="End" Clicked="btnAddGroup_Clicked"/>
+            </StackLayout>
+
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+                --><!--<local:ButtonContext x:Name="BtnMenu"/>--><!--
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<t:MenuContainerPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App14"
+     xmlns:t="clr-namespace:SlideOverKit"
+             xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+             x:Class="App14.CalendarView"
+             Title="CALENDAR">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="icon" Icon="Image.png" Order="Primary" Priority="0"/>
+        <ToolbarItem x:Name="icon1" Icon="menu1.png" Order="Primary" Priority="1" Clicked="addReminder_Clicked"/>
+        <!--<ToolbarItem x:Name="addReminder" Text="Add Reminder" Clicked="addReminder_Clicked" Order="Secondary" />-->
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            
+            <StackLayout x:Name="absMain" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Spacing="2">
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <controls:Calendar  SelectedDate="{Binding CalendarSelectedDate, Mode=TwoWay}" 
+                      HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"  x:Name="calendar"  DateCommand="{Binding DateSelectedcommand}"/>
+                </StackLayout>
+                <StackLayout VerticalOptions="End">
+                    <Label x:Name="lbl" VerticalOptions="Center" 
+                       HorizontalOptions="Center" FontAttributes="Bold" FontSize="Small" />
+                </StackLayout>
+            </StackLayout>
+
+            <!--
+            <StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>
+            -->
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</t:MenuContainerPage>

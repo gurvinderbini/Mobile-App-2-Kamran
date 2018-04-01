@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<t:MenuContainerPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:t="clr-namespace:SlideOverKit"
+             xmlns:local="clr-namespace:App14"
+             x:Class="App14.Tickets"
+             Title="Tickets"            
+            >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="newTicket" Text="Add New Ticket" Icon="menu1" Clicked="newTicket_Clicked" Order="Primary" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content >
+        <AbsoluteLayout>
+            <ActivityIndicator x:Name="aiDevices" AbsoluteLayout.LayoutBounds=".5,0,50,50" AbsoluteLayout.LayoutFlags="PositionProportional" Color="Gray" IsRunning="True"/>
+            <StackLayout x:Name="workingStack">
+                <ListView x:Name="lvTicketList" HasUnevenRows="True" 
+                    SeparatorVisibility="None" 
+                    ItemSelected="lvTicketList_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="80">
+                            <Grid x:Name="ticketDetails">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                <StackLayout BackgroundColor="{Binding color}" Grid.Row="0" Grid.Column="0" Margin="0,8,8,8">
+                                        <Label x:Name="lblICON" Text="{Binding icon}" TextColor="White" FontAttributes="Bold" FontSize="50" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                        <!--<Image Source="{Binding icon}" VerticalOptions="Center" HorizontalOptions="Center"  HeightRequest="60" />-->
+                                </StackLayout>
+                                <StackLayout  Orientation="Vertical" Grid.Row="0" Grid.Column="1" Padding="5" >
+                                    <StackLayout>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"  />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label x:Name="lblTicketDetail" Grid.Column="0" Text="{Binding device_name}" FontAttributes="Bold" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" />
+                                        <Label x:Name="lblTime" Grid.Column="1" Text="{Binding tickets_created}" HorizontalOptions="End" FontAttributes="Italic" HorizontalTextAlignment="End"/>
+                                        </Grid>
+                                    </StackLayout>
+                                    <Label Text="{Binding summary}"/>
+                                    <Label Text="{Binding detail}" FontAttributes="Italic"  />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </StackLayout>
+            
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</t:MenuContainerPage>

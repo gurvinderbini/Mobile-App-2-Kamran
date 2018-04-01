@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App14.LogIn"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#eff2f5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout Padding="0" Margin="0">
+                <StackLayout HeightRequest="300" Orientation="Vertical" VerticalOptions="Start"  BackgroundColor="#3988d6">
+                    <AbsoluteLayout>
+                        <ActivityIndicator x:Name="aiLogin" AbsoluteLayout.LayoutBounds=".5,.5,50,50" AbsoluteLayout.LayoutFlags="PositionProportional" Color="White" IsRunning="False" IsVisible="False"  />
+                    </AbsoluteLayout>
+                    <Image Source="logo" x:Name="imgLogo"/>
+                </StackLayout>
+                <StackLayout Margin="10,0,0,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <StackLayout Grid.Row="0" Padding="7"></StackLayout>
+                        <StackLayout Grid.Row="1" Padding="10">
+                            <Entry x:Name="TxtUserName" Placeholder="User Name" TextColor="Gray" Text="Carrick"/> <!--Text="Carrick"-->
+                        </StackLayout>
+                        <StackLayout Grid.Row="2" Padding="10">
+                            <Entry x:Name="TxtPassword" Placeholder="Password" TextColor="Gray"  IsPassword="True" Text="Liverpool1"/> <!--Text="Liverpool1"-->
+                        </StackLayout>
+                        <StackLayout Grid.Row="3" Orientation="Horizontal">
+                            <controls:CheckBox x:Name="rememberMe" DefaultText="Remember Me" HorizontalOptions="FillAndExpand"/>
+                            <!--<Label x:Name="lblErorTxtCred" TextColor="Red"  />-->
+                        </StackLayout>
+                        <StackLayout Grid.Row="4" Orientation="Horizontal"
+                            x:Name="imgCheckbox">
+                            <Image HorizontalOptions="Start" 
+                                Source="Unchecked_checkbox"
+                                Margin="12,0,0,0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                            Tapped="OnTapGestureRecognizerTapped"
+                                            NumberOfTapsRequired="1" />
+                                    </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Remember Me"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Start"
+                                TextColor="Black"
+                                FontSize="Small"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <!-- middle controls -->
+            </StackLayout>
+            <StackLayout VerticalOptions="End" HorizontalOptions="Fill">
+                <StackLayout Orientation="Vertical" VerticalOptions="End" >
+                    <Button x:Name="btnLoginLbl" Clicked="btnLoginLbl_Clicked" Text="Login" Font="Bold" FontSize="Small" HeightRequest="50" BackgroundColor="#3988d6"  Margin="2" BorderWidth="1" TextColor="#f9ecdb" HorizontalOptions="Fill" VerticalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

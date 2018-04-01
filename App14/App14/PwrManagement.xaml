@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App14.PwrManagement"
+             xmlns:local="clr-namespace:App14"
+             Title="Power Management Task">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            
+            <StackLayout x:Name="workingStack" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+                    <Grid RowSpacing="10" Margin="0,10,0,0" ColumnSpacing="5    " >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"  />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*"  />
+                            <ColumnDefinition Width="7*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Text="Status:" TextColor="#3b93f7" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small"/>
+                        <Picker Grid.Row="0" Grid.Column="1" x:Name="statusPicker" SelectedIndexChanged="statusPicker_SelectedIndexChanged" VerticalOptions="End" Title="pending" />
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Period: " TextColor="#3b93f7" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                        <Picker Grid.Row="1" Grid.Column="1" x:Name="periodPicker" SelectedIndexChanged="periodPicker_SelectedIndexChanged" VerticalOptions="End" Title="Immediately" />
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="Date: " TextColor="#3b93f7" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                        <DatePicker Grid.Row="2" Grid.Column="1" x:Name="datePicker" Format="yyyy-MM-dd" VerticalOptions="End"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Text="Day: " TextColor="#3b93f7" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                        <Picker Grid.Row="3" Grid.Column="1" x:Name="dayPicker" SelectedIndexChanged="dayPicker_SelectedIndexChanged" Title="Monday"/>
+
+                        <Label Grid.Row="4" Grid.Column="0" Text="Time: " TextColor="#3b93f7" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="End" VerticalOptions="End" VerticalTextAlignment="Center" />
+                        <TimePicker Grid.Row="4" Grid.Column="1" x:Name="timePicker" VerticalOptions="End"  />
+
+                        <Label Grid.Row="5" Grid.Column="0" Text="Command: " TextColor="#3b93f7" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                        <Picker Grid.Row="5" Grid.Column="1" x:Name="command" SelectedIndexChanged="command_SelectedIndexChanged" VerticalOptions="End" Title="shutdown"/>
+
+                        <Label Grid.Row="6" Grid.Column="0" Text="Target(s): " TextColor="#3b93f7" FontAttributes="Bold" FontSize="Small" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                        <Picker Grid.Row="6" Grid.Column="1" x:Name="target" SelectedIndexChanged="target_SelectedIndexChanged" VerticalOptions="End" Title="This device only"/>
+                        
+                    </Grid>
+                </StackLayout>
+                <StackLayout VerticalOptions="Center    ">
+                    <!-- middle controls -->
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="End" 
+                    Margin="20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+
+                    <Grid Grid.Row="0" Grid.Column="0" HorizontalOptions="Center">
+                        <Button x:Name="btnCreate" Text="Create" Clicked="btnCreate_Clicked" WidthRequest="150" HeightRequest="50" FontSize="Large" FontAttributes="Bold" BackgroundColor="#2196F3"  Margin="2" BorderWidth="1" TextColor="White"/>
+                    </Grid>
+
+                    <Grid Grid.Row="0" Grid.Column="1" HorizontalOptions="Center">
+                        <Button x:Name="btnCancel" Text="Cancel" Clicked="btnCancel_Clicked" WidthRequest="150" HeightRequest="50" FontSize="Large" FontAttributes="Bold" BackgroundColor="#2196F3" Margin="2" BorderWidth="1" TextColor="White"/>
+                    </Grid>
+                </StackLayout>
+               
+            </StackLayout>
+
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

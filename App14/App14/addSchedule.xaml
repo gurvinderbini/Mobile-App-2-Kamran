@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<t:MenuContainerPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App14"
+    xmlns:t="clr-namespace:SlideOverKit"
+    
+             x:Class="App14.addSchedule"
+             Title="ADD SCHEDULE">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="icon" Icon="menu1.png" Order="Primary" Clicked="event_lists_Clicked"/>
+        <!--<ToolbarItem x:Name="event_lists" Text="Events List" Clicked="event_lists_Clicked" Order="Secondary" />-->
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+
+            <StackLayout x:Name="absMain" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="2">
+
+                <StackLayout Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="Start" BackgroundColor="White">
+                    <StackLayout VerticalOptions="Center">
+                        <Grid Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0" Grid.Row="0" HorizontalOptions="Center">
+                                <Label x:Name="lblCancel"  Text="CANCEL" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="#7ABB6E" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <!--<Button x:Name="openEvents" Clicked="openEvents_Clicked" Text="Events" />-->
+                            </Grid>
+
+                            <Grid Grid.Column="1" Grid.Row="0" HorizontalOptions="Center">
+                                <Label x:Name="lblSave" Text="SAVE" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="#7ABB6E" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <!--<Button x:Name="btnCreate" Clicked="btnCreate_Clicked" Text="save" />-->
+                            </Grid>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                    <StackLayout VerticalOptions="Center">
+                        <Grid Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Margin="5">
+                                <Entry x:Name="reminderTitle" Placeholder="Title" FontSize="Medium" VerticalOptions="Center" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" />
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Column="0" Source="clock" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Grid.Column="1" Text="All day" FontSize="Small" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                                <Switch Grid.Column="2" IsToggled="{Binding RememberLastUser}"></Switch>
+                            </Grid>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                    <Frame CornerRadius="10" Padding="20" OutlineColor="DarkGray">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4.5*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="4.5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <StackLayout Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                    <AbsoluteLayout>
+                                        <Label AbsoluteLayout.LayoutBounds="0,0,100,40" FontSize="Small" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="" x:Name="lblSDatePicked" />
+                                        <DatePicker x:Name="startDatepick" AbsoluteLayout.LayoutBounds="0,0,100,40" TextColor="Black" DateSelected="startDatepick_DateSelected" Opacity="0">
+                                            <DatePicker.Format>ddd, dd MMM yyyy</DatePicker.Format>
+                                        </DatePicker>
+                                    </AbsoluteLayout>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center">
+                                    <AbsoluteLayout>
+                                        <Label x:Name="lblStartTimePicked" AbsoluteLayout.LayoutBounds="0,0,100,40" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="25" Text=""/>
+                                        <TimePicker x:Name="startTimepick" PropertyChanged="startTimepick_PropertyChanged_1" AbsoluteLayout.LayoutBounds="0,0,100,40" Opacity="0">
+                                            <TimePicker.Format>hh:mm tt</TimePicker.Format>
+                                        </TimePicker>
+                                    </AbsoluteLayout>
+                                </StackLayout>
+                            </Grid>
+
+                            <Grid Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Image Source="right" HeightRequest="30" WidthRequest="30" />
+                                <!--<Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large" Font="30" Text=">"/>-->
+                            </Grid>
+
+                            <Grid Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <StackLayout Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
+                                    <AbsoluteLayout>
+                                        <Label AbsoluteLayout.LayoutBounds="0,0,100,40" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small" Text="" x:Name="lblDatePicked" />
+                                        <DatePicker AbsoluteLayout.LayoutBounds="0,0,100,40"  x:Name="Datepick" Opacity="0" DateSelected="Datepick_DateSelected" >
+                                            <DatePicker.Format>ddd, dd MMM yyyy</DatePicker.Format>
+                                        </DatePicker>
+
+                                    </AbsoluteLayout>
+
+                                </StackLayout>
+                                <StackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center">
+                                    <AbsoluteLayout>
+                                        <Label x:Name="lblEndTimePicked" AbsoluteLayout.LayoutBounds="0,0,100,40" FontSize="25" Text="" />
+                                        <TimePicker x:Name="EndTimepick" PropertyChanged="EndTimepick_PropertyChanged" AbsoluteLayout.LayoutBounds="0,0,100,40" Opacity="0">
+                                            <TimePicker.Format>hh:mm tt</TimePicker.Format>
+                                        </TimePicker>
+                                    </AbsoluteLayout>
+                                </StackLayout>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                    <Grid VerticalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="mailaIcon" Grid.Column="0" Source="calender" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Picker x:Name="emailPicker" Grid.Row="0" Grid.Column="1"  
+                                VerticalOptions="End" 
+                                SelectedIndexChanged="emailPicker_SelectedIndexChanged" 
+                                Title="mail@example.com"
+                                
+                                />
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                    <Grid VerticalOptions="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="timerIcon" Grid.Row="0" Grid.Column="0" Source="alarm" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Picker x:Name="reminderPicker" SelectedIndex="2" Grid.Row="0" Grid.Column="1"  VerticalOptions="End" SelectedIndexChanged="reminderPicker_SelectedIndexChanged" Title="10 mins before, Notification" />
+                    </Grid>
+                </StackLayout>
+
+
+
+                <!--<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="locationIcon" Grid.Column="0" Source="pin" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Entry x:Name="locationText" Grid.Column="1" Placeholder="Location" HorizontalTextAlignment="Start" VerticalOptions="Center"/>
+                        <Button x:Name="btnMap" Grid.Column="2" Text="MAP" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium" TextColor="Green" BackgroundColor="Transparent"/>
+                    </Grid>
+                </StackLayout>-->
+
+                <!--<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="End" BackgroundColor="White">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="End">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="btnRepeat" Grid.Column="0" Image="repeat" BackgroundColor="White" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Button x:Name="btnInvites" Grid.Column="1" Image="invitees" BackgroundColor="White" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Button x:Name="btnNotes" Grid.Column="2" Image="notes" BackgroundColor="White" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Button x:Name="btnPrivacy" Grid.Column="3" Image="privacy" BackgroundColor="White" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Button x:Name="btnTimeZone" Grid.Column="4" Image="timezone" BackgroundColor="White" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Grid>
+                </StackLayout>-->
+
+            </StackLayout>
+
+
+
+           <!-- <StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>
+            -->
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</t:MenuContainerPage>

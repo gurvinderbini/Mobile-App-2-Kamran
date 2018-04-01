@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App14.Responses"
+             Title="Ticket Responses">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lvResponseList" 
+                HasUnevenRows="True"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"  />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"  />
+                                    <ColumnDefinition Width="5*" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackLayout Grid.Row="0" Grid.Column="0" >
+                                    <Image Source="{Binding icon}" VerticalOptions="Center" 
+                                    HorizontalOptions="Start" HeightRequest="40"/>
+                                </StackLayout>
+                                <StackLayout Grid.Row="0" Grid.Column="1" Spacing="0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"  />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"  />
+                                            <ColumnDefinition Width="2*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblName" Grid.Row="0" Grid.Column="0" Text="{Binding full_name}" 
+                                        FontSize="Medium"  FontAttributes="Bold" 
+                                        HorizontalOptions="StartAndExpand" 
+                                        HorizontalTextAlignment="Start" 
+                                        VerticalTextAlignment="Center"  />
+                                        <Label x:Name="lblTime" Grid.Row="0" Grid.Column="1" Text="{Binding created}" FontSize="Small" 
+                                        HorizontalOptions="Center" 
+                                        FontAttributes="Italic" 
+                                        HorizontalTextAlignment="End" 
+                                        VerticalTextAlignment="Center"  />
+                                    </Grid>
+                                     <Label x:Name="lblReponse" Text="{Binding response_content}" FontSize="Small" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"  />
+                                </StackLayout>                               
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout VerticalOptions="End" Margin="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"  />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"  />
+                        <ColumnDefinition Width="2*" />
+                        <!--<ColumnDefinition Width="0.5*" />-->
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Row="0" Grid.Column="0" Padding="5" >
+                        <Entry x:Name="entryResp" 
+                            HeightRequest="50"
+                            Placeholder="Reply..."
+                            TextColor="Black"
+                            FontSize="Medium"
+                        HorizontalTextAlignment="Start" />
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="1" Padding="5">
+                        <Button x:Name="btnSend" Clicked="btnSend_Clicked" 
+                        Text="Send!" 
+                        FontSize="Medium"
+                        BackgroundColor="#00C0EF"  
+                        FontAttributes="Bold"
+                        TextColor="White" 
+                        HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

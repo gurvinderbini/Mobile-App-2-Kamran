@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App14"
+             x:Class="App14.Devices"
+             Title="DEVICES"            
+            >
+    <ContentPage.Content>
+        <AbsoluteLayout>
+
+            <ActivityIndicator x:Name="aiDevices" AbsoluteLayout.LayoutBounds=".5,0,50,50" AbsoluteLayout.LayoutFlags="PositionProportional" Color="Gray" IsRunning="True"/>
+            <StackLayout x:Name="workingStack">
+                <StackLayout Padding="5">
+                     <!--<ActivityIndicator x:Name="aiDevices" AbsoluteLayout.LayoutBounds=".5,0,25,20" AbsoluteLayout.LayoutFlags="PositionProportional" Color="Blue" IsRunning="True"/>-->
+                        <Label x:Name="lblGroupName" AbsoluteLayout.LayoutBounds="1,0,1,20" AbsoluteLayout.LayoutFlags="WidthProportional" Text="GROUP ONE DEVICES" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium" TextColor="Gray" />
+                </StackLayout>
+                <!--<StackLayout>
+                <SearchBar x:Name="searchBar" Placeholder="Search by Device Name" TextChanged="searchBar_TextChanged" HorizontalOptions="StartAndExpand" PlaceholderColor="LightGray"/>
+            </StackLayout>-->
+                <ListView x:Name="lvDevicesList" 
+                    HasUnevenRows="True"
+                    SeparatorVisibility="None"
+                    ItemSelected="lvDevicesList_ItemSelected" >
+                    <ListView.ItemTemplate > 
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem x:Name="moveDevice" 
+                                        Clicked="moveDevice_Clicked" 
+                                        CommandParameter="{Binding deviceID}"
+                                        Text="Move Device" 
+                                        IsDestructive="True" />
+                                </ViewCell.ContextActions>
+                                <!--<Grid Padding="5">-->
+                                <Grid Margin="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*" />
+                                        <ColumnDefinition Width="6*" />
+                                        <ColumnDefinition Width="AUTO" />
+                                    </Grid.ColumnDefinitions>
+                                  
+                                    <StackLayout Grid.Row="0"  
+                                        Grid.Column="0" 
+                                        Padding="10">
+                                        <Image Source="{Binding icon}" VerticalOptions="Center" HorizontalOptions="Center"  HeightRequest="60" />
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="0" Grid.Column="1" Padding="7">
+                                        <Label Text="{Binding name}" Font="Bold"/>
+                                        <Label Text="{Binding operating_system}"/>
+                                        <!--<Label Text="{Binding make}"/>-->
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="0" Grid.Column="2" Padding="5">
+                                        <StackLayout>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <StackLayout Grid.Row="0" Grid.Column="0">
+                                                    <Label x:Name="lblStatus" Text="{Binding online_status}" />
+                                                </StackLayout>
+                                                <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Center">
+                                                    <Image x:Name="imgStatus" Source="{Binding online}" VerticalOptions="Center" HorizontalOptions="Center"   />
+                                                </StackLayout>
+                                            </Grid>
+                                        </StackLayout>
+                                        <StackLayout x:Name="btnRemote">
+                                            <!--//Text="{Binding deviceID}"-->
+                                            <Button CommandParameter="{Binding deviceID}" Clicked="btnAccess_Clicked" Text="Access" HeightRequest="40" TextColor="White" FontSize="Small" WidthRequest="70" BackgroundColor="#3988d6" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

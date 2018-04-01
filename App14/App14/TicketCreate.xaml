@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App14"
+             x:Class="App14.TicketCreate"
+            Title="Create Ticket">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout  x:Name="workingStack" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="Fill" VerticalOptions="Start">
+                    <Grid RowSpacing="1"  Margin="0" Padding="0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Padding="10,5,5,5">
+                            <Entry x:Name="userID" Placeholder="Device ID" HorizontalTextAlignment="Start" VerticalOptions="End"  FontFamily="Arial" FontSize="Medium"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Padding="5">
+                            <Entry x:Name="summary" Placeholder="Issue" HorizontalTextAlignment="Start" VerticalOptions="End" FontFamily="Arial" FontSize="Medium"/>
+                        </Grid>
+
+                        <Grid Grid.Row="2" Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Entry x:Name="Name" Grid.Column="0" Placeholder="Name" HorizontalTextAlignment="Start" VerticalOptions="Center" FontFamily="Arial" FontSize="Medium"/>
+                            <Image x:Name="imageName" Grid.Column="1" Source="useremail" HorizontalOptions="Center" VerticalOptions="Start"/>
+                        </Grid>
+
+                        <Grid Grid.Row="3" Padding="5" >
+                            <Entry x:Name="emailID" Placeholder="Email" HorizontalTextAlignment="Start" VerticalOptions="End" FontFamily="Arial" FontSize="Medium"/>
+                        </Grid>
+
+                        <Grid Grid.Row="4" Padding="5">
+                            <Picker x:Name="Pickertopic" SelectedIndexChanged="Pickertopic_SelectedIndexChanged" VerticalOptions="End" Title="Issue..."/>
+                        </Grid>
+
+                        <Grid Grid.Row="5" Padding="5">
+                            <Entry x:Name="detail" Placeholder="Issue Detail" HorizontalTextAlignment="Start" VerticalOptions="End" FontFamily="Arial" FontSize="Medium"/>
+                        </Grid>
+
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout VerticalOptions="CenterAndExpand">
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="End" 
+                    Margin="0,0,10,40">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+
+                    <Grid Grid.Row="0" Grid.Column="0" HorizontalOptions="Center">
+                        <Button x:Name="btnCreate" Clicked="btnCreate_Clicked" WidthRequest="150" HeightRequest="50" Text="Create" FontSize="Large" FontAttributes="Bold" BackgroundColor="#2196F3"  Margin="2" BorderWidth="1" TextColor="White"/>
+                    </Grid>
+
+                    <Grid Grid.Row="0" Grid.Column="1" HorizontalOptions="Center">
+                        <Button x:Name="btnCancel" Text="Cancel" Clicked="btnCancel_Clicked" WidthRequest="150" HeightRequest="50" FontSize="Large" FontAttributes="Bold" BackgroundColor="#2196F3" Margin="2" BorderWidth="1" TextColor="White"/>
+                    </Grid>
+                    
+                </StackLayout>
+            </StackLayout>
+
+            <!--<StackLayout x:Name="backlayout" IsVisible="False" Opacity=".7" BackgroundColor="Black">
+            </StackLayout>
+
+            <StackLayout x:Name="btnlayout" IsVisible="False" Opacity="1" >
+                <local:ButtonContext x:Name="BtnMenu"/>
+            </StackLayout>
+
+            <StackLayout x:Name="mainStack">
+                <local:menus x:Name="Menu"/>
+            </StackLayout>-->
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
