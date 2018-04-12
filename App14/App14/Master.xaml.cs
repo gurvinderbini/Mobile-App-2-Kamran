@@ -127,7 +127,21 @@ namespace App14
             {
                 DisplayAlert("Sign Out", "Message : " + e.Message, "OK");
             }
-         
+            // Notifications
+            try
+            {
+                btnNotification.GestureRecognizers.Add(new TapGestureRecognizer
+                {
+                    Command = new Command(() => {
+                        App.NavigateMasterDetail(new NotificationsPage());
+                    })
+                });
+            }
+            catch (Exception e)
+            {
+                //DisplayAlert("Sign Out", "Message : " + e.Message, "OK");
+            }
+
         }
     }
 }

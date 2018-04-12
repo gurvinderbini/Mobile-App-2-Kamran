@@ -150,6 +150,8 @@ namespace App14
         static object locker = new object();
         static object lockerEvent = new object();
         static object lockerLogin = new object();
+        static object TokenLock = new object();
+        static object NotificationLock = new object();
         SQLiteAsyncConnection database;
 
         public SqlHelper()
@@ -161,14 +163,19 @@ namespace App14
             database.CreateTableAsync<EventsList>().Wait();
             // create the tables  for save credentials
             database.CreateTableAsync<RememberMeCredentials>().Wait();
+
+            database.CreateTableAsync<NotificationBO>().Wait();
+
+            database.CreateTableAsync<DeviceTokenBO>().Wait();
+
         }
-        public SQLite.SQLiteAsyncConnection GetConnection()
+        public SQLiteAsyncConnection GetConnection()
         {
             SQLiteAsyncConnection sqlitConnection;
             var sqliteFilename = "cloudSchool.db3";
             IFolder folder = FileSystem.Current.LocalStorage;
             string path = PortablePath.Combine(folder.Path.ToString(), sqliteFilename);
-            sqlitConnection = new SQLite.SQLiteAsyncConnection(path);
+            sqlitConnection = new SQLiteAsyncConnection(path);
             return sqlitConnection;
         }
         /*
@@ -179,6 +186,52 @@ namespace App14
                 return (from i in database.Table<RegEntity>() select i).ToListAsync();
             }
         }*/
+
+        public Task<int> InsertToken(DeviceTokenBO token)
+        {
+            lock (TokenLock)
+            {
+                database.DropTableAsync<DeviceTokenBO>();
+                database.CreateTableAsync<DeviceTokenBO>();
+                return database.InsertAsync(token);
+            }
+        }
+        public Task<DeviceTokenBO> GetToken()
+        {
+            lock (TokenLock)
+            {
+                try
+                {
+                    return database.Table<DeviceTokenBO>().FirstOrDefaultAsync();
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
+
+            }
+        }
+
+        public Task<int> InsertNotification(NotificationBO item)
+        {
+            lock (NotificationLock)
+            {
+                return database.InsertAsync(item);
+            }
+        }
+        public Task<List<NotificationBO>> GetAllNotfications()
+        {
+            lock (NotificationLock)
+            {
+                return database.Table<NotificationBO>().ToListAsync();
+            }
+
+            lock (locker)
+            {
+
+            }
+        }
+
         public Task<RegEntity> GetItemFirst()
         {
             lock (locker)
@@ -224,7 +277,7 @@ namespace App14
                 return database.DeleteAsync(id);
             }
         }
-        
+
         public Task<List<EventsList>> getAllEvents()
         {
             return database.Table<EventsList>().ToListAsync();
@@ -261,7 +314,6 @@ namespace App14
                 }
             }
         }
-
 
         public async Task<int> noOfEvents()
         {

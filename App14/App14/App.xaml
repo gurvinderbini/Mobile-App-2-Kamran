@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:convertor="clr-namespace:App14.Convertor;assembly=App14"
              x:Class="App14.App">
     <Application.Resources>
         
@@ -9,7 +10,9 @@
                 <Setter Property="BarBackgroundColor" Value="#009fd7"/>
                 <Setter Property="BarTextColor" Value="White"/>
             </Style>
-        
+            <convertor:NotificationsIconConvertor x:Key="NotificationsIconConvertor"/>
+
+            <convertor:NotificationsColorConvertor x:Key="NotificationsColorConvertor"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

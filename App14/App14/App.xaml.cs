@@ -27,8 +27,9 @@ namespace App14
         public static string tenant_id = "";
         public static int length;
         public static int width;
+        public static string user_tenant_id = "";
 
-        public  async static void NavigateMasterDetail(Page page)
+        public async static void NavigateMasterDetail(Page page)
         {
             try
             {

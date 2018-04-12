@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using App14.Helpers;
 using Newtonsoft.Json;
 
 using Xamarin.Forms;
@@ -179,6 +180,9 @@ namespace App14
                         App.user_email = Convert.ToString(email);
                         App.logged_user_name = Convert.ToString(result2.user_full_name);
                         App.user_id = Convert.ToString(result2.user_id);
+                        App.user_tenant_id = Convert.ToString(result2.user_tenant_id);
+
+                        PushDeviceToken();
 
                         //save in database
                         if (rememberMe.Checked == true)
@@ -237,6 +241,21 @@ namespace App14
                 await DisplayAlert("Connection", "Internet Connection Disabled", "Ok");
             }
         }
+
+        public async void PushDeviceToken()
+        {
+            var client = new HttpClient();
+            client.BaseAddress = new Uri(App.api_url);
+            var values = new Dictionary<string, string>();
+            values.Add("operation", "insert_device_token");
+            values.Add("user_id", App.user_id);
+            values.Add("parent_id", App.tenant_id);
+            values.Add("device_token", Settings.DeviceToken);
+            var content = new FormUrlEncodedContent(values);
+            HttpResponseMessage response = await client.PostAsync("/itcrm/ws/webservices", content);
+            var result = await response.Content.ReadAsStringAsync();
+        }
+
 
     }
 

@@ -20,6 +20,7 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="35"  />
@@ -138,6 +139,23 @@
                     HorizontalOptions="FillAndExpand"
                     Grid.Row="6"
                     Grid.Column="0"
+                />
+                <Label 
+                    x:Name="btnNotification" 
+                    TextColor="#475059" 
+                    BackgroundColor="Transparent" 
+                    Text="Notifications"  
+                    Margin="0" 
+                    Grid.Row="6"
+                    Grid.Column="1"
+                />
+
+                    <Image 
+                    Source="signoutGray" 
+                    VerticalOptions="FillAndExpand" 
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Row="7"
+                    Grid.Column="0"
                     />
                 <Label 
                     x:Name="btnSignout" 
@@ -145,7 +163,7 @@
                     BackgroundColor="Transparent" 
                     Text="Sign Out"  
                     Margin="0" 
-                    Grid.Row="6"
+                    Grid.Row="7"
                     Grid.Column="1"
                   />
 
