@@ -6,6 +6,7 @@ using App14.Models;
 using Foundation;
 using Plugin.FirebasePushNotification;
 using UIKit;
+using UserNotifications;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
@@ -75,6 +76,7 @@ namespace App14.iOS
 
                 NotificationBO notificationBo = new NotificationBO();
 
+                FirebasePushNotificationManager.CurrentNotificationPresentationOption = UNNotificationPresentationOptions.Alert;
 
 
                 foreach (var item in p.Data)
